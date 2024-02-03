@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progect 2</title>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Varela+Round&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-59% , -50%);
+            background-color: rgb(46, 231, 255);
+            font-family: 'Fira Mono', monospace;
+            font-family: 'Varela Round', sans-serif;
+        }
+        .container{
+            padding: 10px;
+            height: 230px;
+            width: 400px;
+            text-align: center;
+            border-radius: 8px;
+            background-color: white;
+        }
+        h4{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        input{
+            display: block;
+            margin: auto;
+            margin-bottom: 8px;
+        }
+        #message{
+            height: 32px;
+            width: 350px;
+            border: 1px solid rgb(184, 181, 181);
+            margin-bottom: 15px;
+        }
+        #btn{
+            height: 38px;
+            width: 80px;
+            font-size: 17px;
+            background-color: rgb(46, 231, 255);
+            border: none;
+            outline: none;
+        }
+        #not-message{
+            background-color: rgb(245, 111, 111);
+            padding: 3px;
+            font-size: 17px;
+            margin: 5px;
+            display: none;
+        }
+        .temp{
+            font-size: 20px;
+            margin: 6px;
+            
+        }
+        #last{
+            font-size: 19px;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>A Message You Would Like To Pass</h4>
+        <form action="" id="frm">
+            <input type="text"  id="message">
+            <input type="submit" value="Submit" id="btn">
+            <div id="not-message">Please Write Any Message</div>
+            <div class="temp">Last message Delivered</div>
+            <div id="last">Hello Word !</div>
+        </form>
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var mes = document.getElementById("message");
+            var output = document.getElementById("last");
+            var war = document.getElementById("not-message")
+                output.innerHTML = mes.value;
+
+                if(mes.value === ""){
+                    war.style.display = "block";
+                    output.innerHTML="😕";
+                    setInterval(() => {
+                        war.style.display = "none";
+                    }, 4000);
+                }
+                return false;  
+        }
+    </script>
+</body>
+</html>
